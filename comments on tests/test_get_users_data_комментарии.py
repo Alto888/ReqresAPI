@@ -10,5 +10,3 @@
 
 #Подтверди, что
     assert
-
-#https://jsoneditoronline.org
