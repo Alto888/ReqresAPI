@@ -20,3 +20,5 @@ def test_error_auth():
     find_element(driver, EMAIL_FIELD).send_keys('mail')
     find_element(driver, NEXT_BUTTON).click()
     find_element(driver, ERROR_TEXT)
+
+    Test
