@@ -1,0 +1,106 @@
+Index: test_error_auth.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from pydoc import locate\r\nfrom selenium import webdriver\r\nfrom selenium.webdriver.common.by import By\r\nfrom selenium.webdriver.support.wait import WebDriverWait\r\nfrom selenium.webdriver.support import expected_conditions\r\n\r\ndriver = webdriver.Chrome()\r\nLOGIN_BUTTON = (By.XPATH, '//*[@id=\"gb\"]/div/div[2]/a')\r\nEMAIL_FIELD = (By.XPATH, '//*[@id=\"identifierId\"]')\r\nNEXT_BUTTON = (By.XPATH, '//*[@id=\"identifierNext\"]/div/button')\r\nERROR_TEXT = (By.XPATH, '//*[text()=\"Не удалось найти аккаунт Google.\"]')\r\n\r\n\r\ndef find_element(driver,locator, time=10):\r\n    return WebDriverWait(driver,time).until(expected_conditions.presence_of_element_located(locator))\r\n\r\ndef test_error_auth():\r\n    driver.get(\"https://www.google.ru/\")\r\n    find_element(driver, LOGIN_BUTTON).click()\r\n    find_element(driver, EMAIL_FIELD).send_keys('mail')\r\n    find_element(driver, NEXT_BUTTON).click()\r\n    find_element(driver, ERROR_TEXT)\r\n\r\n    Test\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test_error_auth.py b/test_error_auth.py
+--- a/test_error_auth.py	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
++++ b/test_error_auth.py	(date 1729535178503)
+@@ -21,4 +21,4 @@
+     find_element(driver, NEXT_BUTTON).click()
+     find_element(driver, ERROR_TEXT)
+ 
+-    Test
++
+Index: .idea/ReqresAPI.iml
+===================================================================
+diff --git a/.idea/ReqresAPI.iml b/.idea/ReqresAPI.iml
+deleted file mode 100644
+--- a/.idea/ReqresAPI.iml	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
++++ /dev/null	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/venv" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="Python 3.12 (ReqresAPI)" jdkType="Python SDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
++++ /dev/null	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
++++ /dev/null	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Black">
+-    <option name="sdkName" value="Python 3.12" />
+-  </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (ReqresAPI)" project-jdk-type="Python SDK" />
+-</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
++++ /dev/null	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
++++ /dev/null	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/ReqresAPI.iml" filepath="$PROJECT_DIR$/.idea/ReqresAPI.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+deleted file mode 100644
+--- a/.idea/inspectionProfiles/profiles_settings.xml	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
++++ /dev/null	(revision 7e224e2bc7c7c9a16a3f50a9f9765b9d60506595)
+@@ -1,6 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <settings>
+-    <option name="USE_PROJECT_PROFILE" value="false" />
+-    <version value="1.0" />
+-  </settings>
+-</component>
+\ No newline at end of file
